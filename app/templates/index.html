@@ -2,10 +2,58 @@
 
 {% block styles %}
   <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='lib/masonry/dist/masonry.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+
+  <script type="text/javascript">
+    var $container = $('.masonry-container');
+    $container.imagesLoaded( function () {
+        $container.masonry({
+            columnWidth: '.masonry-item',
+            itemSelector: '.masonry-item'
+        });
+    });
+  </script>
 {% endblock %}
 
 {% block content %}
-  <h1>
-    hello world!
-  </h1>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="row masonry-container">
+        <div class="col-md-4 masonry-item">
+          <img src="https://s3.postimg.org/rxtp4vs8z/image.gif" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s14.postimg.org/l5kajgrbl/image.gif" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s11.postimg.org/zfjp6a3lv/image.gif" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s21.postimg.org/rxjsvwr9j/image.gif" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s21.postimg.org/e8nfx5cev/image.gif" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s3.postimg.org/9iv629fw3/image.gif" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s21.postimg.org/6l2vx3rt3/image.gif" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s14.postimg.org/aml4lx03l/image.jpg" alt="">
+        </div>
+        <div class="col-md-4 masonry-item">
+          <img src="https://s11.postimg.org/cnkurslxv/image.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
 {% endblock %}

@@ -1,3 +1,65 @@
 body {
   background-color: #eee;
 }
+
+header {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.logo {
+  font-family: 'Nixie One', cursive;
+}
+
+.font-nixie-one {
+  font-family: 'Nixie One', cursive;
+}
+
+.navbar-collapse {
+  line-height: 10px;
+}
+
+.navbar {
+  border: 0;
+  margin-bottom: 0;
+}
+
+.navbar-nav {
+  display: inline-block;
+  float: none;
+  margin-top: 65px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.navbar-toggle {
+  float: none;
+  padding: 8px 25px;
+  margin: 0;
+  margin-top: 50px;
+  color: #fff;
+  background-color: black;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+  padding: 15px 0;
+  margin: 0 50px;
+  color: #666;
+  font-weight: 800;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: transparent;
+}
+
+.masonry-item {
+  padding: 5px;
+}
+
+.masonry-item > img {
+  width: 100%;
+}
