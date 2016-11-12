@@ -1,5 +1,9 @@
 {% extends 'layout.html' %}
 
+{% block styles %}
+  <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
   <h1>
     hello world!
