@@ -1,0 +1,10 @@
+*.pyc
+
+# intellij idea generated directory
+.idea/
+
+# virtual environment
+venv/
+
+# js libraries
+app/static/lib/
