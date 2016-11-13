@@ -1,6 +1,7 @@
 import uuid
-from app import app, boto3_session
+from app import app, boto3_session, db
 from app.forms.image_upload import ImageUploadForm
+from app.models.images import ImageModel
 from flask import request, url_for, redirect, abort, render_template
 
 
@@ -35,5 +36,14 @@ def upload():
             'owner-content-type': 'document'
         }
     )
+
+    new_image = ImageModel(
+        key=hashed_filename,
+        file_format=uploaded_file.mimetype,
+        size=uploaded_obj.content_length
+    )
+
+    db.session.add(new_image)
+    db.session.commit()
 
     return redirect(url_for('index'))
