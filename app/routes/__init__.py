@@ -8,7 +8,9 @@ from flask import request, url_for, redirect, abort, render_template
 @app.route('/')
 def index():
     form = ImageUploadForm()
-    return render_template('index.html', form=form)
+
+    images = ImageModel.query.order_by(ImageModel.id.desc()).limit(10)
+    return render_template('index.html', form=form, images=images)
 
 
 @app.route('/upload', methods=['POST'])
