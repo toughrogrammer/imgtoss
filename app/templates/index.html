@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block styles %}
+  <link href="{{ url_for('static', filename='lib/bootstrap-fileinput/css/fileinput.min.css') }}" media="all" rel="stylesheet" type="text/css" />
   <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nixie+One" rel="stylesheet">
 {% endblock %}
@@ -8,6 +9,7 @@
 {% block scripts %}
   <script src="{{ url_for('static', filename='lib/masonry/dist/masonry.pkgd.min.js') }}"></script>
   <script src="{{ url_for('static', filename='lib/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/bootstrap-fileinput/js/fileinput.min.js') }}"></script>
 
   <script type="text/javascript">
     var $container = $('.masonry-container');
@@ -17,10 +19,33 @@
             itemSelector: '.masonry-item'
         });
     });
+
+    $('#file').fileinput({
+      previewZoomSettings:{
+        image: {
+          width: 'auto', 
+          height: 'auto',
+          'max-width': '100%',
+          'max-height': '100%'
+        },
+      }
+    });
   </script>
 {% endblock %}
 
 {% block content %}
+  <div class="row box-input-file">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <label class="control-label">What image do you want to upload?</label>
+        {{ form.file }}
+      </form>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">

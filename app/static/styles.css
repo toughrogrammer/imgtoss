@@ -56,6 +56,10 @@ header {
   background-color: transparent;
 }
 
+.box-input-file {
+  padding-bottom: 50px;
+}
+
 .masonry-item {
   padding: 5px;
 }

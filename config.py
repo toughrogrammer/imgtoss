@@ -3,6 +3,8 @@ import os
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
+SECRET_KEY = 'king god oss'
+
 DATABASE_HOST = '127.0.0.1'
 DATABASE_USERNAME = 'oss'
 DATABASE_PASSWORD = 'oss'
