@@ -1,0 +1,24 @@
+{
+  "name": "imgtoss",
+  "homepage": "https://github.com/growingdever/imgtoss",
+  "authors": [
+    "growingdever <growingdever@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/static/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-fileinput": "^4.3.5",
+    "masonry": "^4.1.1",
+    "imagesloaded": "^4.1.1"
+  }
+}
